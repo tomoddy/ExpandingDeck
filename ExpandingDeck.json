@@ -1,0 +1,14 @@
+{
+  "id": "ExpandingDeck",
+  "name": "Expanding Deck",
+  "display_name": "Expanding Deck",
+  "author": ["tzer0m"],
+  "description": "Adds the Expanding Deck: your Joker slots equal the current Ante.",
+  "prefix": "expdeck",
+  "main_file": "ExpandingDeck.lua",
+  "priority": 0,
+  "badge_colour": "343A70",
+  "badge_text_colour": "FDB62C",
+  "version": "1.0.0",
+  "dependencies": ["Steamodded (>=1.0.0~BETA)"]
+}
