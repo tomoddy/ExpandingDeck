@@ -1,4 +1,4 @@
-# <img src="assets/2x/modicon.png" width="48" align="center"> Expanding Deck
+# Expanding Deck
 
 A Balatro deck where your **Joker slots equal the current Ante**.
 
