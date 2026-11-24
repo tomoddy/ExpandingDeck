@@ -4,6 +4,13 @@
 --- the deck only ever adds or removes the difference when the Ante changes.
 
 SMODS.Atlas({
+    key = "modicon",
+    path = "modicon.png",
+    px = 34,
+    py = 34,
+})
+
+SMODS.Atlas({
     key = "expanding_deck",
     path = "expanding_deck.png",
     px = 71,
@@ -62,15 +69,16 @@ SMODS.Back({
         text = {
             "{C:attention}Joker{} slots equal",
             "the current {C:attention}Ante{}",
-            "{C:inactive}(Currently {C:attention}#1#{C:inactive} slots)",
+            "{C:inactive}(Currently {C:attention}#1#{C:inactive})",
         },
     },
     loc_vars = function(self, info_queue, back)
+        -- Only show live slots when the loaded run is actually using this deck
         local slots = 1
-        if G.STAGE == G.STAGES.RUN and G.jokers then
+        if G.STAGE == G.STAGES.RUN and G.jokers and is_active() then
             slots = G.jokers.config.card_limit
         end
-        return { vars = { slots } }
+        return { vars = { slots == 1 and "1 slot" or (slots .. " slots") } }
     end,
     apply = function(self, back)
         G.GAME.expdeck_slots = 1
